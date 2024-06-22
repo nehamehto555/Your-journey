@@ -1,0 +1,57 @@
+
+<% layout("/layouts/boilerplate") %>
+
+ <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h3>Edit your listing</h3>
+       <form  novalidate class="needs-validation" method="POST" action="/listings/<%= listing._id %>?_method=PUT" >
+         <div class="mb-3">  
+         <label for="title" class="form-label" >Title</label>  
+           <input
+            type="text" 
+            name="listing[title]" 
+            value="<%= listing.title %> "
+             class="form-control" 
+             required/>
+             <div class="valid-feedback">Title needs good</div>
+         </div>
+
+
+ <div class="mb-3">
+    <label for="description" class="form-label" >Description</label>    
+     <textarea class="form-control"  name="listing[description]"required><%= listing.description %> </textarea>
+     <div class="invalid-feedback"> please enter a description </div>
+ </div>
+
+
+ <div class="mb-3">
+    <label for="image" class="form-label" >Image link</label>    
+    <input type="text" name="listing[image]" value="<%= listing.image %>" class="form-control" required>
+ </div>
+
+ <div class="row">
+   <div class="mb-3 col-md-4">
+    <label for="price" class="form-label" >Price</label>    
+    <input type="number" name="listing[price]" value="<%= listing.price %>" class="form-control" required>
+    <div class="invalid-feedback"> valid price required </div>
+ </div>
+
+ <div class="mb-3 col-md-4">
+    <label for="country" class="form-label" >Country</label>    
+     <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control" required>
+     <div class="invalid-feedback"> valid country name required </div>
+    </div>
+  </div>
+
+ <div class="mb-3">
+    <label for="location" class="form-label" >Location</label>    
+   <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control" required>
+  <div class="invalid-feedback"> valid country name required </div>
+ </div>
+<button class="btn btn-dark edit-btn mt-2">Edit</button>
+    </form>
+
+</div>   
+</div>
+<br><br>
+<script src="/js/srcipt.js"></script>

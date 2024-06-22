@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br>
+    <b><h3> Create a new listing</h3></b>
+    <br>
+    <form  method="POST" action="/listings" class="needs-validation"  novalidate>
+
+<div >
+     <label for="title" class="form-label">Title</label>
+     <input
+      type="text"
+      name="listing[title]"
+      placeholder="Add a catchy title"
+      class="form-control"
+      required
+      />
+      <div class="valid-feedback">Title looks good!</div>
+</div>
+
+<br/>
+
+<div>
+    <label for="description"
+         class="form-label">Description</label>
+    <textarea type="text"
+         name="listing[description]"
+         class="form-control" required>
+        
+    </textarea>
+    <div class="invalid-feedback">description is required</div>
+</div>
+
+<br/>
+
+<div>
+    <label for="image" class="form-label">Image Link</label>
+    <input type="text" name="listing[image]" class="form-control" placeholder="image URL/Link">
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md-4">
+    <label for="price" class="form-label">Price</label>
+    <input
+
+      name="listing[price]" placeholder="1,500" class="form-control" required>
+       <div class="invalid-feedback">valid price required</div>
+   </div>
+
+<br/>
+
+   <div class="col-md-8">
+    <label for="country" class="form-label">Country</label>
+    <input type="text" name="listing[country]" placeholder="India" class="form-control" required>
+    <div class="invalid-feedback">valid country name </div>
+   </div>
+<br/>
+   </div>
+<br>
+<div>
+    <label for="location" class="form-label">Location</label>
+    <input type="text" name="listing[location]" placeholder="Shimla, Himachal Pradesh" class="form-control" required>
+    <div class="invalid-feedback">valid country location</div>
+</div>
+
+<button class="btn btn-dark add-btn mt-3">Add</button>
+
+    </form>
+</div>
+</div>
+
+
