@@ -5,7 +5,11 @@
             <br>
     <b><h3> Create a new listing</h3></b>
     <br>
-    <form  method="POST" action="/listings" class="needs-validation"  novalidate>
+    <form  method="POST" 
+    action="/listings" 
+    class="needs-validation" 
+    novalidate
+    enctype="multipart/form-data">
 
 <div >
      <label for="title" class="form-label">Title</label>
@@ -20,7 +24,6 @@
 </div>
 
 <br/>
-
 <div>
     <label for="description"
          class="form-label">Description</label>
@@ -31,25 +34,20 @@
     </textarea>
     <div class="invalid-feedback">description is required</div>
 </div>
-
 <br/>
 
 <div>
-    <label for="image" class="form-label">Image Link</label>
-    <input type="text" name="listing[image]" class="form-control" placeholder="image URL/Link">
-</div>
-
+    <label for="image" class="form-label">Upload Image</label>
+    <input type="file" name="listing[image]" class="form-control">
+    </div>
 <br>
 
 <div class="row">
     <div class="col-md-4">
     <label for="price" class="form-label">Price</label>
-    <input
-
-      name="listing[price]" placeholder="1,500" class="form-control" required>
+    <input name="listing[price]" placeholder="1,500" class="form-control" required>
        <div class="invalid-feedback">valid price required</div>
    </div>
-
 <br/>
 
    <div class="col-md-8">
@@ -60,15 +58,14 @@
 <br/>
    </div>
 <br>
+
 <div>
     <label for="location" class="form-label">Location</label>
     <input type="text" name="listing[location]" placeholder="Shimla, Himachal Pradesh" class="form-control" required>
     <div class="invalid-feedback">valid country location</div>
 </div>
-
 <button class="btn btn-dark add-btn mt-3">Add</button>
-
-    </form>
+</form>
 </div>
 </div>
 
